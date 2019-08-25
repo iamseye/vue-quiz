@@ -1,21 +1,25 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import quizes from "@/assets/test-quiz.json"
+import quizesData from "@/assets/test-quiz.json"
 
 Vue.use(Vuex)
 
 export const store = new Vuex.Store({
     state: {
         quizIndex: -1,
-        quizes: quizes.quizes
+        quizes: quizesData.quizes
     },
     getters: {
-        currentQuiz(state) {
-            if (state.quizIndex < 0 || state.quizIndex >= state.quizes.length) {
-                return []
-            }
-
-            return state.quizes[state.quizIndex];
+        quizes(state) {
+            return state.quizes;
+        },
+        totalQuiz(state) {
+            return state.quizes.length
+        }
+    },
+    mutations: {
+        CHANGE_QUIZ: (state) => {
+            state.quizIndex += 1
         }
     }
 })
