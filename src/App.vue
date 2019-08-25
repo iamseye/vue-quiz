@@ -1,7 +1,19 @@
 <template>
   <div id="app">
-    <h1>Simpe quiz</h1>
-    <Quiz />
+    <div class="container">
+      <div class="column is-half is-offset-one-quarter">
+        <div class="card">
+          <div class="card-header">
+            <p class="card-header-title">
+              Simple quiz
+            </p>
+          </div>
+          <div class="card-content">
+            <Quiz />
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -17,12 +29,4 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>

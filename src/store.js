@@ -36,10 +36,12 @@ export const store = new Vuex.Store({
             return state.quizIndex
         },
         addUserResponse: ({commit}, payload) => {
+            commit('ADD_USER_RESPONSE', payload)
+        },
+        updateCorrectNumber: ({commit}, payload) => {
             if (payload.correct) {
                 commit('UPDATE_CORRECT_NUMBER')
             }
-            commit('ADD_USER_RESPONSE', payload)
-        },
+        }
     }
 })
