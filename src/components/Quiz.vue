@@ -8,7 +8,7 @@
       <ol>
         <li v-for="(answer, index) in quiz.answers" :key='index'>
           <label class="radio">
-            <input type="radio" name="answer">
+            <input type="radio" name="answer" />
             {{ answer.text }}
           </label>
         </li>
@@ -25,19 +25,21 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   name: 'Quiz',
   computed: {
+    ...mapGetters({
+      quiz: 'currentQuiz'
+    }),
     quizIndex() {
       return this.$store.state.quizIndex
-    },
-    quiz() {
-      return this.$store.state.quizes[this.$store.state.quizIndex]
     }
   },
   methods: {
     changeQuiz() {
-      this.$store.state.quizIndex += 1;
+      this.$store.state.quizIndex += 1
     }
   }
 }
