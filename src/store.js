@@ -3,4 +3,70 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-export const store = new Vuex.Store()
+export const store = new Vuex.Store({
+    state: {
+        quizIndex: -1,
+        quizes: [
+            {
+                "question": "What is Finn's favourite color?",
+                "answers": [
+                    {
+                        "text": "Red",
+                        "id": 1,
+                        "correct": true
+                    },
+                    {
+                        "text": "Green",
+                        "id": 2,
+                        "correct": false
+                    },
+                    {
+                        "text": "Blue",
+                        "id": 3,
+                        "correct": false
+                    }
+                ]
+            },
+            {
+                "question": "What is Jake's favourite Food?",
+                "answers": [
+                    {
+                        "text": "ApplePie",
+                        "id": 1,
+                        "correct": false
+                    },
+                    {
+                        "text": "Curry",
+                        "id": 2,
+                        "correct": true
+                    },
+                    {
+                        "text": "Peabut butter",
+                        "id": 3,
+                        "correct": false
+                    }
+                ]
+            },
+            {
+                "question": "What is BMO's favourite place?",
+                "answers": [
+                    {
+                        "text": "Home",
+                        "id": 1,
+                        "correct": false
+                    },
+                    {
+                        "text": "Kingdom",
+                        "id": 2,
+                        "correct": false
+                    },
+                    {
+                        "text": "Hill",
+                        "id": 3,
+                        "correct": true
+                    }
+                ]
+            }
+        ]
+    }
+})

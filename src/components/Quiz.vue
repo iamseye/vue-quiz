@@ -13,12 +13,12 @@
           </label>
         </li>
       </ol>
-      <button @click="changeQuiz(quizIndex)">Next</button>
+      <button @click="changeQuiz()">Next</button>
     </div>
 
     <div v-else>
       Welcome to the simple quiz
-      <button @click="changeQuiz(quizIndex)">Start</button>
+      <button @click="changeQuiz()">Start</button>
     </div>
 
   </div>
@@ -27,10 +27,17 @@
 <script>
 export default {
   name: 'Quiz',
-  props: ['quiz', 'quizIndex'],
+  computed: {
+    quizIndex() {
+      return this.$store.state.quizIndex
+    },
+    quiz() {
+      return this.$store.state.quizes[this.$store.state.quizIndex]
+    }
+  },
   methods: {
-    changeQuiz(quizIndex) {
-        this.$emit('changeQuiz', quizIndex +=1 );
+    changeQuiz() {
+      this.$store.state.quizIndex += 1;
     }
   }
 }
