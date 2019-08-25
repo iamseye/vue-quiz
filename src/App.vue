@@ -12,7 +12,7 @@ export default {
   name: 'app',
   data() {
     return {
-      quizIndex: 0,
+      quizIndex: -1,
       quizes: [
         {
           "question": "What is Finn's favourite color?",

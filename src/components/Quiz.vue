@@ -3,7 +3,7 @@
     
     {{ quizIndex }}
 
-    <div v-if="quizIndex > 0"> 
+    <div v-if="quizIndex >= 0">
       {{ quiz.question }}
       <ol>
         <li v-for="(answer, index) in quiz.answers" :key='index'>
